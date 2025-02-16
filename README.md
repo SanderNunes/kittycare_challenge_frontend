@@ -1,50 +1,89 @@
-# React + TypeScript + Vite
+# 🐱 **KittyCare - Frontend with Google OAuth Authentication**  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 **Overview**  
+The implementation of **Google OAuth 2.0 authentication**. Users can log in using their **Google accounts**, and their profile details are displayed upon successful authentication.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 **Completed tasks**  
+✅ Google Login with OAuth 2.0  
+✅ Display user profile information after login  
+✅ Logout functionality  
+✅ Authentication state persistence  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🛠️ **Setting Up the Project**  
 
-- Configure the top-level `parserOptions` property like this:
+### 1️⃣ **Clone the Repository**  
+```bash
+git clone https://github.com/sanderNunes/kittycare-frontend.git  
+cd kittycare-frontend  
+```  
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### 2️⃣ **Install Dependencies**  
+```bash
+yarn  
+```  
+
+### 3️⃣ **Set Up Environment Variables**  
+Create a `.env` file in the root directory and add:  
+```
+VITE_GOOGLE_CLIENT_ID
+VITE_GOOGLE_CLIENT_SECRET 
+```  
+The keys are the ones used in the backend readme
+
+### 4️⃣ **Run the Development Server**  
+```bash
+yarn dev  
+```  
+The app will start on **`http://localhost:5173/`**  
+
+---
+
+## 🔄 **Authentication Flow**  
+1️⃣ **User clicks Google Login** → Redirects to Google OAuth  
+2️⃣ **User logs in** → Google sends an **ID Token**  
+3️⃣ **Frontend sends the token to backend** → Backend verifies & returns **JWT**  
+4️⃣ **User session is stored** → JWT stored in **httpOnly cookie** or local state  
+
+---
+
+## 🎨 **Frontend Features**  
+- **Google Login Button:** Allows users to sign in with their Google accounts  
+- **Profile Display:** Shows **email, name, and profile picture** after login  
+- **Logout Button:** Clears user session  
+- **Persistent Authentication:** Keeps users logged in across page reloads  
+
+---
+
+## 📚 **Files/Folders Edited**  
+```
+kittycare-frontend  
+ └── 📂 src  
+     └── 📂 components  
+         └── GoogleLoginButton.tsx
+         └── 📂 Login
+             └── LoginForm.tsx
+     └── 📂 context  
+         └── AuthContext.tsx  
+     └── 📂 Redux  
+         └── userSlice.ts
+     └── 📂 pages  
+         └── Dashboard.tsx
+         └── Login.tsx  
+     └── App.tsx 
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## ✅ **Security Considerations**  
+🔹 **CORS Policy:** Ensures secure cross-origin requests  
+🔹 **JWT Storage:** Tokens can be stored in `httpOnly` cookies for enhanced security  
+🔹 **Token Expiry:** JWT expires in **1 hour** (`expiresIn: "1h"`)  
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+---
+
+Let me know if you need any changes! 🚀
+
