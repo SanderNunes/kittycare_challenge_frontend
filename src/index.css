@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  cursor: url("/assets/svg/Cursor.svg"), pointer;
+}
+
+::-webkit-scrollbar {
+  /* Customize the scrollbar width */
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  /* Customize the scrollbar track */
+  background-color: none;
+}
+
+::-webkit-scrollbar-thumb {
+  /* Customize the scrollbar thumb */
+  background: #ddd;
+  border-radius: 3px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: auto;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 6px 12px;
+  position: absolute;
+  z-index: 60;
+  top: 20px;
+  left: 120%;
+  word-wrap: unset;
+  white-space: nowrap;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* Custom Calendar Style */
+.custom-calendar {
+  background-color: #f3ede8;
+  padding: 1rem;
+  color: #ffa500;
+  font-weight: 400;
+  border: none;
+}
+
+.custom-calendar .react-datepicker__header {
+  background-color: #f3ede8;
+  border-bottom: none;
+  color: #ffa500;
+  font-weight: 400;
+  border-bottom: 1px solid lightgray;
+}
+
+.custom-calendar .react-datepicker__day--selected,
+.custom-calendar .react-datepicker__day--keyboard-selected {
+  background-color: #ffa500;
+  color: white;
+  border-radius: 50%;
+}
+
+.custom-calendar .react-datepicker__day--today {
+  color: #fff;
+  font-weight: bold;
+}
+
+.custom-calendar .react-datepicker__day:hover {
+  background-color: rgba(255, 130, 0, 0.2);
+  color: #ffa500;
+}
+
+.custom-calendar .react-datepicker__navigation--previous,
+.custom-calendar .react-datepicker__navigation--next {
+  padding: 6px;
+  margin-top: 20px;
+  font-weight: 200;
+}
+
+.custom-calendar .react-datepicker__navigation--previous:hover,
+.custom-calendar .react-datepicker__navigation--next:hover {
+  background-color: rgba(255, 130, 0, 0.1);
+}
