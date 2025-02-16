@@ -85,5 +85,5 @@ kittycare-frontend
 
 ---
 
-Let me know if you need any changes! 🚀
+Great challenge by the way! 🚀
 
